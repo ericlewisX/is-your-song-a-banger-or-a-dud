@@ -1,31 +1,40 @@
 # Is Your Song a Banger or a Dud?
 Galvanize Capstone Project: Is Your Song a Banger or a Dud?
 
-This project implements several machine learning algorithms such as Logistic Regression, Decision Trees, and Random Forests. The algorithms use a song's features such as tempo, valence, liveliness etc., to predict if the song will be able to reach the Billboard Hot 100 Chart. 
-
 ## Objective
 The objecive of this project is to make a model that can predict if a song can make it to the Billboard Hot 100 Chart. The model we end up with is a Hyperparameter Tuned Random Forest Model that uses a song's features such as tempo, valence, liveliness etc., to make it's prediction. 
 
 ## Understanding the Motivation / Potential Use-Cases TODO
-The primary motivation of this project is money. How can 
+The primary motivation of this project is money with the target enitities being Record Labels or Music Artists.
+It can be extremely lucrative if there is a way to stop either a Record Label or an individual artist from wasting their capital and time on songs that are mathematically proven to not be a success and instead divert those valuable resources to songs that can be popular.
 
 ## Proposed Solution 
+The proposed solution is to make a model that can predict the success of a song. Success for this predictive model is defined as if the song in question can land any spot on Billboard's U.S Hot 100 Chart.
 
-
-## Data - Datasets
+## Data - Datasets Origin
 The data was scraped by another data scientist and comes from Billboard’s The Hot 100 chart:  
-* The Hot 100 Chart covers the top songs in the United States every week all the way since the Chart’s inception in 1958.
-* I also used a the kaggle dataset []() to splice in random tracks so there is a balance between the number of tracks that made it to the top and those that didn’t.
+* The Hot 100 Chart covers the top songs in the United States every week all the way since the Chart’s inception in 1958. 
+  * [https://data.world/kcmillersean/billboard-hot-100-1958-2017](https://data.world/kcmillersean/billboard-hot-100-1958-2017)
+* I also used a kaggle dataset to splice in random tracks so there is a balance between the number of tracks that made it to the top and those that didn’t.
+  * [https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks) [Removed as of September 2, 2021]
 
+## Data
+The structure of the cleaned data was a list of 48 thousand songs where each entry is a song with some of its properties. This is a list of all the properties:
+![The Track Properties](images/TrackProperties.png)
+An example of an entry of the dataset is: 
+![Sample Track](images/TrackSampleElvis.png)
 
-## Data - Entry
-Since the amount of null values in some columns were at most only 2%, I ended up dropping those entries. It was a long survey so any presence of null values I figured was due to human-error such as skipping a question or data-loss from transferring the electronic or written records.
-
-I also made a subset of the dataframe built from the survey so I can extract certain feature columns more easily and conduct seperate hypothesis tests more efficiently. 
+An additional column is added where the value is one hot encoded if the song reached the top 100 chart. 
+This plot shows the structure of the cleaned dataset.
+![Balanced_DF](plots/balanced_df.png)
 
 ## Methodology
 ### The Models
-We will tackle our objective by doing a hypothesis test between Gender and Phobias.
+We'll start with a `train_test_split` to get our Training and Test Data.
+
+Our baseline will be a Logistic Regression Model where the features are the track properties columns and the target is the one hot encoded column that denotes if the track is a member of the Hot 100 Chart.
+
+We will then use a Decision Tree, followed by a Random Forest. Hyper Parameter tuning will be tried for every applicable model.
 
 #### Logistic Regression
 
