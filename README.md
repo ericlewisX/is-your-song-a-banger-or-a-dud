@@ -36,34 +36,80 @@ Our baseline will be a Logistic Regression Model where the features are the trac
 
 We will then use a Decision Tree, followed by a Random Forest. Hyper Parameter tuning will be tried for every applicable model.
 
+There are three performance metrics I considered, Accuracy, Precision, and Recall. For this particular objective, they can be defined as such:
+
+* Accuracy : (number of correct predicitions) / (total number of predictions)
+* Precision : (number of true positives) / (Actual results aka [True Positive + False Positive])
+* Recall : (number of true positives) / (Predicted Results aka [True Positive + False Negative])
+
+We must also determine what true positive, true negative, false positive and false negative mean in relation to our problem. Once we verbalize that, we can choose the appropriate performance metric to use.
+
+True Postive : Our model predicted that the song can make it to the Billboard Hot 100 Chart and it actually made it to the Hot 100 Chart.
+True Negative : Our model predicted that the song can not make it to the Billboard Hot 100 Chart and it actually did not make it to the Hot 100 Chart.
+False Positive : Our model predicted that the song can make it to the Billboard Hot 100 Chart but in actuality it did not make it to the Hot 100 Chart.
+False Negative : Our model predicted that the song can not make it to the Billboard Hot 100 Chart but in actuality it did make it to the Hot 100 Chart.
+
+I will be choosing the performance metric Precision to focus on. The explanation for why Precision is important can be found in the Results section where the values of the metrics for each model is shown.
+
 #### Logistic Regression
+|  | |
+|:-------------------------:|:-------------------------:|
+|![Logistic Regression Confusion Matrix](plots/confusionLR.png) | ![Logistic Regression Normalized Confusion Matrix](plots/confusionnormLR.png)|
+
+
+|  | Accuracy | Precision | Recall |
+|:----------:|:---------------:| :---: | :---: |
+| Logistic Regression | 0.601 | 0.668 | 0.593 |
+
+I used a Logistic Regression model as a baseline. It was better than a random guess at a little over 50%. 
+
+![Logistic Regression Best Model Coefficients](plots/Logistic%20Regression%20Best%20Model%20Coefficients.png)
+
+I also found the Coefficients for each Track property for the best model after hyper parameter tuning.
+
+Since this is just the baseline model we move onto something a bit more promising. 
 
 #### Decision Trees
+|  | |
+|:-------------------------:|:-------------------------:|
+|![Decision Tree Confusion Matrix](plots/confusionDT.png) | ![Decision Tree Normalized Confusion Matrix](plots/confusionnormDT.png)|
+
+|  | Accuracy | Precision | Recall |
+|:----------:|:---------------:| :---: | :---: |
+| Decision Tree | 0.622 | 0.768 | 0.591 |
+
+After hyper-parameter tuning, we see a signficant boost in all of the performance metrics.
+
+|_ |_|
+|:-------------------------:|:-------------------------:|
+|![Decision Tree ROC Curve](plots/rocDT.png) | ![Decision Tree Song Permutation Importance](plots/DTFI.png)|
+
+We see that from the Permutation Importance that acousticness has more of an effect on the model's predictive than any other property. However it seems unlikely that two of the several metrics don't have any effect at all, so we'll use something more robust than a Decision Tree; multiple Decision Trees, or a Random Forest.
 
 #### Random Forest
+|_ |_|
+|:-------------------------:|:-------------------------:|
+|![Random Forest Confusion Matrix](plots/confusionRF.png) | ![Random Forest Normalized Confusion Matrix](plots/confusionnormRF.png)|
 
-## Results
+|  | Accuracy | Precision | Recall |
+|:----------:|:---------------:| :---: | :---: |
+| Random Forest | 0.736 | 0.899 | 0.674 |
+
+After hyper-parameter tuning, all of our performance metrics increase. We then 
+
+|_ |_|
+|:-------------------------:|:-------------------------:|
+|![Decision Tree ROC Curve](plots/roc%20RF.png) | ![Decision Tree Song Permutation Importance](plots/rfFI.png)|
+
 
 ## Results
 The results of the each of the models are shown in the table below:
 
-
-|  Original Alpha | Corrected Alpha for Bonferroni method | 
-| :---: | :---: |
-| 0.05 | 0.004545454545454546 |
-
-| Gender vs Phobia | Original p-val | Bonferroni Corrected p-val| Reject Null? |
-| :---: | :---: | :---: | :---: |
-| Flying             | 7.208e-04  | 7.93e-03 | True |
-| Thunder, Lightning | 4.6241𝑒−22 | 5.09e-21 | True |
-| Darkness           | 9.9074𝑒−23 | 1.09e-21 | True |
-| Heights            | 0.0989     | 1.0      | False|
-
+|            |  Accuracy | Precision | Recall |
+|:----------:|:--------------:| :---: | :---: |
+| Logistic Regression | 0.601 | 0.668 | 0.593 |
+| Decision Tree | 0.622 | 0.768 | 0.591 |
+| Random Forest | 0.736 | 0.899 | 0.674 |
 
 ## Conclusions / Future-Steps
-Out of 10 different phobias surveyed, 9 of them show us that there is a relationship between a person’s gender and their phobias. 
-<!-- 
-Future Steps - Would be to go back to the beginning and impute those 2% of missing values I dropped and see if there is a significant difference. 
 
-Post-Hoc Testing- Pair-wise comparisons. 
-To see which gender is more afraid of those phobias and where the relationship is between the levels of the variables. -->
