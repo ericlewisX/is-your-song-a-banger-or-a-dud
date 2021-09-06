@@ -95,12 +95,13 @@ We see that from the Permutation Importance that acousticness has more of an eff
 |:----------:|:---------------:| :---: | :---: |
 | Random Forest | 0.736 | 0.899 | 0.674 |
 
-After hyper-parameter tuning, all of our performance metrics increase. We then 
+After hyper-parameter tuning, all of our performance metrics increase to an acceptable level and so this is our finalized model.
 
 |_ |_|
 |:-------------------------:|:-------------------------:|
 |![Decision Tree ROC Curve](plots/roc%20RF.png) | ![Decision Tree Song Permutation Importance](plots/rfFI.png)|
 
+Unlike the plot for Decision Trees the Permutation Importance for Random Forest shows that every track property has a some affect on the model's outcome which seems more realistic. We would need to do further analysis to see each features' individual effect but generally we can see tha acousticness has the most effect on accuracy out of the features we considered for the model.
 
 ## Results
 The results of the each of the models are shown in the table below:
@@ -111,5 +112,14 @@ The results of the each of the models are shown in the table below:
 | Decision Tree | 0.622 | 0.768 | 0.591 |
 | Random Forest | 0.736 | 0.899 | 0.674 |
 
+Since Random Forest is the obvious winner in all performance metrics considered, the finalized model is the one built on it. 
+
 ## Conclusions / Future-Steps
 
+If a record label was using this Random Forest Model, knowing if a song will be a on Billboard'ss The Hot 100 Chart 70% (accuracy) of the time can be extremely lucrative. 
+
+However, the precision metric score in my opinion is more important than the accuracy. 
+The translation for precision in relation to our objective is:
+* Out of all the tracks that the model predicted made it to the Hot 100, how many actually made it. Our model judged a little under 90%. 
+
+With the foresight that this model can give, the marketing team or an  artist can be more proactive on the songs that actually have a chance at success instead of reactive if a song happens to be a bop.
