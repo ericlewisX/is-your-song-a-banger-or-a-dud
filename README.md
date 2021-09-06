@@ -44,12 +44,14 @@ There are three performance metrics I considered, Accuracy, Precision, and Recal
 
 We must also determine what true positive, true negative, false positive and false negative mean in relation to our problem. Once we verbalize that, we can choose the appropriate performance metric to use.
 
-True Postive : Our model predicted that the song can make it to the Billboard Hot 100 Chart and it actually made it to the Hot 100 Chart.
-True Negative : Our model predicted that the song can not make it to the Billboard Hot 100 Chart and it actually did not make it to the Hot 100 Chart.
-False Positive : Our model predicted that the song can make it to the Billboard Hot 100 Chart but in actuality it did not make it to the Hot 100 Chart.
-False Negative : Our model predicted that the song can not make it to the Billboard Hot 100 Chart but in actuality it did make it to the Hot 100 Chart.
+* True Postive : Our model predicted that the song can make it to the Billboard Hot 100 Chart and it actually made it to the Hot 100 Chart.
+* True Negative : Our model predicted that the song can not make it to the Billboard Hot 100 Chart and it actually did not make it to the Hot 100 Chart.
+* False Positive : Our model predicted that the song can make it to the Billboard Hot 100 Chart but in actuality it did not make it to the Hot 100 Chart.
+* False Negative : Our model predicted that the song can not make it to the Billboard Hot 100 Chart but in actuality it did make it to the Hot 100 Chart.
 
-I will be choosing the performance metric Precision to focus on. The explanation for why Precision is important can be found in the Results section where the values of the metrics for each model is shown.
+I think the Precision metric is more important to increase but we'll see all three performance metrics just in case readers want to make their own interpretation/justification on which one to use for whatever problem they are approaching. 
+
+The final model and performance metric values are shown in the [Results](#results) section.
 
 #### Logistic Regression
 |  | |
