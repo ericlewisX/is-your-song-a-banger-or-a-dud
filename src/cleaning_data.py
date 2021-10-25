@@ -92,7 +92,7 @@ model_ready.sort_values('top100', ascending =False, inplace=True)
 
 # Merge for a perfect Dataset to predict Top100.
 model_ready_df = pd.concat([model_ready[:24185],
-                          model_ready[24185].sample(24190)])
+                          model_ready[24185:].sample(24190)])
 
 ## Optional ##
 # Check New dataset
