@@ -1,4 +1,4 @@
-![Last Update](https://img.shields.io/badge/last%20change-August%20--%2001%20--%202021%20-yellowgreen)
+![Last Update](https://img.shields.io/badge/last%20change-November%20--%2012%20--%202021%20-yellowgreen)
 # Is Your Song a Banger or a Dud?
 Galvanize Capstone Project: Is Your Song a Banger or a Dud?
 
