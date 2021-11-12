@@ -6,4 +6,4 @@ The contents in the directory __dataVendors__ are files that are obtained from p
 
 Mainly : 
 * [https://data.world/kcmillersean/billboard-hot-100-1958-2017](https://data.world/kcmillersean/billboard-hot-100-1958-2017)
-* [https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks) [Removed as of September 2, 2021] Too large at the momentfor conventional upload. Will figure out how to upload using Git LFS.
+* [https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks](https://www.kaggle.com/yamaerenay/spotify-dataset-19212020-160k-tracks) [Removed as of September 2, 2021] Too large at the momentfor conventional upload. 
