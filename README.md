@@ -1,6 +1,6 @@
 ![Last Update](https://img.shields.io/badge/last%20change-August%20--%2012%20--%202021%20-yellowgreen)
 # Is Your Song a Banger or a Dud?
-Galvanize Capstone Project: Is Your Song a Banger or a Dud? 
+Galvanize Capstone Project: Is Your Song a Banger or a Dud?   
 
 ## Objective
 The objecive of this project is to make a model that can predict if a song can make it to the Billboard Hot 100 Chart. The model we end up with is a Hyperparameter Tuned Random Forest Model that uses a song's features such as tempo, valence, liveliness etc., to make it's prediction. 
