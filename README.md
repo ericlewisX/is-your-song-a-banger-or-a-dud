@@ -12,7 +12,7 @@ It can be extremely lucrative if there is a way to stop either a Record Label or
 ## Proposed Solution 
 The proposed solution is to make a model that can predict the success of a song. Success for this predictive model is defined as if the song in question can land any spot on Billboard's U.S Hot 100 Chart.
 
-## Data - Datasets Origin
+## Data - Datasets Origin 
 The data was scraped by another data scientist and comes from Billboard’s The Hot 100 chart:  
 * The Hot 100 Chart covers the top songs in the United States every week all the way since the Chart’s inception in 1958. 
   * [https://data.world/kcmillersean/billboard-hot-100-1958-2017](https://data.world/kcmillersean/billboard-hot-100-1958-2017)
