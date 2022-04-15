@@ -5,7 +5,7 @@ Galvanize Capstone Project: Is Your Song a Banger or a Dud?
 ## Objective
 The objecive of this project is to make a model that can predict if a song can make it to the Billboard Hot 100 Chart. The model we end up with is a Hyperparameter Tuned Random Forest Model that uses a song's features such as tempo, valence, liveliness etc., to make it's prediction. 
 
-## Understanding the Motivation / Potential Use-Cases TODO
+## Understanding the Motivation / Business Understanding
 The primary motivation of this project is money with the target enitities being Record Labels or Music Artists.
 It can be extremely lucrative if there is a way to stop either a Record Label or an individual artist from wasting their capital and time on songs that are mathematically proven to not be a success and instead divert those valuable resources to songs that can be popular.
 
